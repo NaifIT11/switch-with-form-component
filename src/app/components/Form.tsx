@@ -37,8 +37,8 @@ export default function Form() {
         </div>
         <div className="flex items-center justify-between">
           <label htmlFor="username">Marketing Emails:</label>
-          <button className="h-6 w-11 focus-visible:ring-2 rounded-full p-1 bg-gray-100" role="switch" aria-label="Switch Control" aria-checked={marketingEmails} onClick={handleSwitchChange}>
-            <div className="w-4 h-4 rounded-full bg-black"></div>
+          <button className="h-6 w-11 bg-gray-100 data-[checked=true]:bg-green-300 data-[checked=false]:bg-gray-100 focus-visible:ring-2 rounded-full p-1" data-checked={marketingEmails} role="switch" aria-label="Switch Control" aria-checked={marketingEmails} onClick={handleSwitchChange}>
+            <div data-checked={marketingEmails} className="w-4 h-4 rounded-full bg-black transition-transform data-[checked=true]:translate-x-5 data-[checked=false]:translate-x-0"></div>
           </button>
         </div>
       </form>
