@@ -7,6 +7,12 @@ export default function Form() {
   const [marketingEmails, setMarketingEmails] = useState(false);
   function hanldeSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    console.log({
+        data: {
+            username,
+            marketingEmails
+        }
+    })
   }
   function handleInputChange(e: React.FormEvent<HTMLInputElement>) {
     setUsername(e.currentTarget.value);
