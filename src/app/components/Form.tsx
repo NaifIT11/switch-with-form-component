@@ -5,10 +5,10 @@ import { useState } from "react"
 
 export default function Form(){
 
-    const [name , setName] = useState('');
+    const [username , setUsername] = useState('');
     const [marketingEmails , setMarketingEmails] = useState(false);
-    function hanldeSubmit(){
-
+    function hanldeSubmit(e: React.FormEvent<HTMLFormElement>){
+        e.preventDefault();
     }
 
     return (
@@ -18,7 +18,10 @@ export default function Form(){
                 <p className="text-sm">please choose and enter data</p>
             </div>
             <form onSubmit={hanldeSubmit} className="space-y-4">
-                
+                <div className="space-y-2">
+                    <label htmlFor="username">Username:</label>
+                    <input type="text" id="username" className="p-3 border outline-none rounded focus-visible:ring-2 focus:ring-2"/>
+                </div>
             </form>
         </div>
     )
