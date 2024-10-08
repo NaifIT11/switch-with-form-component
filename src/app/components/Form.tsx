@@ -17,7 +17,8 @@ export default function Form() {
   function handleInputChange(e: React.FormEvent<HTMLInputElement>) {
     setUsername(e.currentTarget.value);
   }
-  function handleSwitchChange(){
+  function handleSwitchChange(e: React.FormEvent<HTMLButtonElement>){
+    e.preventDefault();
     if(marketingEmails){
         setMarketingEmails(false)
     }else{
