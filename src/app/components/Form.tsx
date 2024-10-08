@@ -10,6 +10,9 @@ export default function Form(){
     function hanldeSubmit(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault();
     }
+    function handleInputChange(e:  React.FormEvent<HTMLInputElement>){
+        setUsername(e.target.value);
+    }
 
     return (
         <div className="space-y-4 p-4 rounded border">
@@ -20,7 +23,7 @@ export default function Form(){
             <form onSubmit={hanldeSubmit} className="space-y-4">
                 <div className="space-y-2">
                     <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" className="p-3 border outline-none rounded focus-visible:ring-2 focus:ring-2"/>
+                    <input type="text" value={username} onChange={handleInputChange} id="username" className="p-3 border outline-none rounded focus-visible:ring-2 focus:ring-2"/>
                 </div>
             </form>
         </div>
