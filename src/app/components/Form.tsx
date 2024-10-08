@@ -32,15 +32,16 @@ export default function Form() {
             value={username}
             onChange={handleInputChange}
             id="username"
-            className="p-3 border outline-none rounded focus-visible:ring-2 focus:ring-2"
+            className="p-3 border border-gray-100 outline-none ring-gray-100 rounded ring-0 ring-offset-2 focus:ring-2"
           />
         </div>
         <div className="flex items-center justify-between">
           <label htmlFor="username">Marketing Emails:</label>
-          <button className="h-6 w-11 bg-gray-100 data-[checked=true]:bg-green-300 data-[checked=false]:bg-gray-100 focus-visible:ring-2 rounded-full p-1" data-checked={marketingEmails} role="switch" aria-label="Switch Control" aria-checked={marketingEmails} onClick={handleSwitchChange}>
+          <button className="h-6 w-11 bg-gray-100 data-[checked=true]:bg-gray-300 data-[checked=false]:bg-gray-100 focus-visible:ring-2 rounded-full p-1" data-checked={marketingEmails} role="switch" aria-label="Switch Control" aria-checked={marketingEmails} onClick={handleSwitchChange}>
             <div data-checked={marketingEmails} className="w-4 h-4 rounded-full bg-black transition-transform data-[checked=true]:translate-x-5 data-[checked=false]:translate-x-0"></div>
           </button>
         </div>
+        <button type="submit" className="w-full p-3 inline-flex items-center justify-center rounded font-bold bg-gray-100">submit</button>
       </form>
     </div>
   );
