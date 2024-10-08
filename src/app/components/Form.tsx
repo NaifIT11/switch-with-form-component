@@ -4,15 +4,21 @@ import { useState } from "react";
 
 export default function Form() {
   const [username, setUsername] = useState("");
+  const [error , setError] = useState('');
   const [marketingEmails, setMarketingEmails] = useState(false);
   function hanldeSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log({
-        data: {
-            username,
-            marketingEmails
-        }
-    })
+    if(username.length < 4){
+        setError("name should lengthen 4 characters or more")
+    }else{
+        console.log({
+            data: {
+                username,
+                marketingEmails
+            }
+        })
+        setError("")
+    }
   }
   function handleInputChange(e: React.FormEvent<HTMLInputElement>) {
     setUsername(e.currentTarget.value);
@@ -41,6 +47,7 @@ export default function Form() {
             id="username"
             className="p-3 border border-gray-100 outline-none ring-gray-100 rounded ring-0 ring-offset-2 focus:ring-2"
           />
+          {error && <p className="text-red-300">{error}</p>}
         </div>
         <div className="flex items-center justify-between">
           <label htmlFor="username">Marketing Emails:</label>
